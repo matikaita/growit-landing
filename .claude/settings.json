@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/matiaskaitazoff/Downloads/PENEBIENDURO && git add -A && git diff --cached --quiet || git -c user.email=\"matikaita@gmail.com\" -c user.name=\"Matias Kaitazoff\" commit -m \"auto: update $(date '+%Y-%m-%d %H:%M')\" && git push origin main 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "Publicando en Vercel..."
+          }
+        ]
+      }
+    ]
+  }
+}
